@@ -18,13 +18,14 @@ namespace AForge.WindowsForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainForm());
-            Application.Run(new NeuralNetworksStand(new Dictionary<string, Func<int[], BaseNetwork>>
+            Application.Run(new MainForm());
+            /*Application.Run(new NeuralNetworksStand(new Dictionary<string, Func<int[], BaseNetwork>>
             {
             // Тут можно добавить свои нейросети
             {"Accord.Net Perseptron", structure => new AccordNet(structure)},
             {"Студентческий персептрон", structure => new StudentNetwork(structure)},
             }));
-            }
+            */
+        }
     }
 }

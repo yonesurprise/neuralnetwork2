@@ -99,6 +99,7 @@ namespace NeuralNetwork1
 
             for (int i = 0; i < training_size; i++)
                 samples.AddSample(generator.GenerateFigure());
+            
             try
             {
                 //  Обучение запускаем асинхронно, чтобы не блокировать форму

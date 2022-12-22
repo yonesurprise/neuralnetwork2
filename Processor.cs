@@ -217,7 +217,8 @@ namespace AForge.WindowsForms
             unmanaged = cropFilter.Apply(unmanaged);
 
             //  Масштабируем до 100x100
-            AForge.Imaging.Filters.ResizeBilinear scaleFilter = new AForge.Imaging.Filters.ResizeBilinear(100, 100);
+            AForge.Imaging.Filters.ResizeBilinear scaleFilter1 = new AForge.Imaging.Filters.ResizeBilinear(32, 32);
+            AForge.Imaging.Filters.ResizeBilinear scaleFilter = new AForge.Imaging.Filters.ResizeBilinear(400, 400);
             unmanaged = scaleFilter.Apply(unmanaged);
 
             return rez;

@@ -12,6 +12,8 @@ using AForge.Video;
 using AForge.Video.DirectShow;
 using System.Diagnostics;
 using System.IO.Ports;
+using Accord.Math.Transforms;
+using NeuralNetwork1;
 
 namespace AForge.WindowsForms
 {
@@ -203,6 +205,22 @@ namespace AForge.WindowsForms
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             controller.settings.processImg = checkBox1.Checked;
+        }
+
+        private void ProcessButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var a = new NeuralNetworksStand(new Dictionary<string, Func<int[], BaseNetwork>>
+            {
+            // Тут можно добавить свои нейросети
+            {"Accord.Net Perseptron", structure => new AccordNet(structure)},
+            {"Студентческий персептрон", structure => new StudentNetwork(structure)},
+            });
+            a.Show();
         }
     }
 }
