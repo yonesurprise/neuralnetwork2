@@ -10,10 +10,12 @@ namespace NeuralNetwork1
     /// <summary>
     /// Тип фигуры
     /// </summary>
+    /// 
     public enum FigureType : byte { Triangle = 0, Rectangle, Circle, Sinusiod, Undef };
-    
+
     public class GenerateImage
     {
+       /* public enum FigureType : byte { Triangle = 0, Rectangle, Circle, Sinusiod, Undef };*/
         /// <summary>
         /// Бинарное представление образа
         /// </summary>

@@ -141,6 +141,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.tresholdTrackBar);
@@ -262,7 +263,7 @@
             this.controlPanel.Controls.Add(this.ProcessButton);
             this.controlPanel.Controls.Add(this.PlayButton);
             this.controlPanel.Enabled = false;
-            this.controlPanel.Location = new System.Drawing.Point(1292, 208);
+            this.controlPanel.Location = new System.Drawing.Point(694, 839);
             this.controlPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.controlPanel.Name = "controlPanel";
             this.controlPanel.Size = new System.Drawing.Size(591, 72);
@@ -308,7 +309,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1292, 17);
+            this.button1.Location = new System.Drawing.Point(407, 124);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(167, 37);
@@ -321,8 +322,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1623, 924);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1299, 924);
             this.Controls.Add(this.resolutionsBox);
             this.Controls.Add(this.controlPanel);
             this.Controls.Add(this.ticksLabel);

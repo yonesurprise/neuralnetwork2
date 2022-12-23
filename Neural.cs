@@ -4,6 +4,8 @@ using System.Collections;
 
 namespace NeuralNetwork1
 {
+    //public enum FigureType : byte { Play = 0, Pause, Repeat, Next, Previouse, Louder, Quieter, Rewindf, Rewindb, Mix, Undef };
+
     /// <summary>
     /// Класс для хранения образа – входной массив сигналов на сенсорах, выходные сигналы сети, и прочее
     /// </summary>

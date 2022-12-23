@@ -14,6 +14,8 @@ using System.Diagnostics;
 using System.IO.Ports;
 using Accord.Math.Transforms;
 using NeuralNetwork1;
+using AForge.Imaging.Filters;
+using System.Reflection.Emit;
 
 namespace AForge.WindowsForms
 {
@@ -207,9 +209,33 @@ namespace AForge.WindowsForms
             controller.settings.processImg = checkBox1.Checked;
         }
 
+        private int imgCounter = 0;
+        private String folderName = "sample";
+
         private void ProcessButton_Click(object sender, EventArgs e)
         {
+            /*if (mainNet == null)
+            {
+                label5.Text = "нейронка не тренирована";
+                return;
+            }*/
+            Bitmap current = (Bitmap)controller.GetProcessedImage().Clone();
+            ResizeBilinear filter = new ResizeBilinear(200, 200);
+            Bitmap newImage = filter.Apply(current);
+            string fullFolderName = Environment.CurrentDirectory + "\\" + folderName;
+            System.IO.Directory.CreateDirectory(fullFolderName);
 
+            string fileName = System.IO.Path.Combine(fullFolderName, imgCounter + ".bmp");
+            newImage.Save(fileName);
+            current.Dispose();
+            newImage.Dispose();
+
+            ++imgCounter;
+
+           /* Sample sample = Sample.fromFile(fileName);
+            EmblemType emblem = mainNet.Predict(sample);
+            label5.BackColor = Color.White;
+            label5.Text = "Я вижу: " + emblem.ToString();*/
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -221,6 +247,25 @@ namespace AForge.WindowsForms
             {"Студентческий персептрон", structure => new StudentNetwork(structure)},
             });
             a.Show();
+        }
+
+        private void saveImage()
+        {
+             int imgCounter = 0;
+             String folderName = "mix";
+
+            Bitmap current = (Bitmap)controller.GetProcessedImage().Clone();
+            ResizeBilinear filter = new ResizeBilinear(200, 200);
+            Bitmap newImage = filter.Apply(current);
+            string fullFolderName = Environment.CurrentDirectory + "\\" + folderName;
+            System.IO.Directory.CreateDirectory(fullFolderName);
+
+            string fileName = System.IO.Path.Combine(fullFolderName, imgCounter + ".bmp");
+            newImage.Save(fileName);
+            current.Dispose();
+            newImage.Dispose();
+
+            ++imgCounter;
         }
     }
 }

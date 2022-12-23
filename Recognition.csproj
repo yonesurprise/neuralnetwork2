@@ -115,7 +115,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Processor.cs" />
-    <Compile Include="Solver.cs" />
     <Compile Include="StudentNetwork.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
